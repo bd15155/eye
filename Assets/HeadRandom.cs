@@ -6,21 +6,19 @@ namespace TobiiEyeTracking
 {
     public class HeadRandom : MonoBehaviour
     {
-        private float speed = 10f;
-        private float dir =1.0f;
+        private float dir = 1.0f;
         private Vector3 axis;
         private float Angle;
       
         void Update()
         {
-            //transform.Rotate(new Vector3(0.0f, -2.0f, 0.0f));
-            //transform.Rotate(Vector3.up * Time.deltaTime * speed);
-            if (axis.y > 0 && Angle >= 210)
+          
+            if (axis.y > 0 && Angle >= 45)
             {
                 print("true");
                 dir = -1;
             }
-            if (axis.y > 0 && Angle <= 120)
+            if (axis.y < 0 && Angle >= 45)
             {
                 print("false");
                 dir = 1;
