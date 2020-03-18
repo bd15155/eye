@@ -15,12 +15,12 @@ namespace TobiiEyeTracking
           
             if (axis.y > 0 && Angle >= 45)
             {
-                print("true");
+                //print("true");
                 dir = -1;
             }
             if (axis.y < 0 && Angle >= 45)
             {
-                print("false");
+                //print("false");
                 dir = 1;
             }
             transform.rotation *= Quaternion.Euler(20 * Time.deltaTime * 0, dir, 0);
