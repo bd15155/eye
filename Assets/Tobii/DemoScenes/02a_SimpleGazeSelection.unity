@@ -3598,9 +3598,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blendingCurve:
     serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.006557405
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.50063777
+      value: 0.09985101
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: -0.006557405
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 1
+    m_PostInfinity: 1
     m_RotationOrder: 4
 --- !u!1 &1307884897
 GameObject:
@@ -3878,14 +3905,6 @@ PrefabInstance:
     - target: {fileID: 462458, guid: e319662ca5bda3d48a3f8553ced6a41b, type: 3}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 19814278, guid: e319662ca5bda3d48a3f8553ced6a41b, type: 3}
-      propertyPath: InitialModule.startSizeY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19814278, guid: e319662ca5bda3d48a3f8553ced6a41b, type: 3}
-      propertyPath: InitialModule.startSizeZ.minMaxState
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e319662ca5bda3d48a3f8553ced6a41b, type: 3}

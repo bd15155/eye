@@ -4,8 +4,12 @@ using Tobii.Gaming;
 namespace TobiiEyeTracking{
 	public class HeadMove : MonoBehaviour
 {
+		public bool LeftEyeClosed { get; private set; }
+		public Vector2 LeftEyePosition { get; private set; }
+		public bool RightEyeClosed { get; private set; }
+		public Vector2 RightEyePosition { get; private set; }
 
-	public Transform Head;
+		public Transform Head;
 	public float Responsiveness = 10f;
 
 	void Update()
@@ -15,7 +19,26 @@ namespace TobiiEyeTracking{
 		{
 			Head.transform.localRotation = Quaternion.Lerp(Head.transform.localRotation, headPose.Rotation, Time.unscaledDeltaTime * Responsiveness);
 		}
+			//var headPose1 = TobiiAPI.GetHeadPose();
+			//print(headPose1);
+		/*
+			var gazePoint = TobiiAPI.GetGazePoint();
+			if (gazePoint.IsRecent() && Camera.main != null)
+			{
+				var eyeRotation = Quaternion.Euler((gazePoint.Viewport.y - 0.5f) * Camera.main.fieldOfView, (gazePoint.Viewport.x - 0.5f) * Camera.main.fieldOfView * Camera.main.aspect, 0);
 
+				var eyeLocalRotation = Quaternion.Inverse(Head.transform.localRotation) * eyeRotation;
+
+				var pitch = eyeLocalRotation.eulerAngles.x;
+				if (pitch > 180) pitch -= 360;
+				var yaw = eyeLocalRotation.eulerAngles.y;
+				if (yaw > 180) yaw -= 360;
+
+				LeftEyePosition = new Vector2(Mathf.Sin(yaw * Mathf.Deg2Rad), Mathf.Sin(pitch * Mathf.Deg2Rad));
+				RightEyePosition = new Vector2(Mathf.Sin(yaw * Mathf.Deg2Rad), Mathf.Sin(pitch * Mathf.Deg2Rad));
+			}
+
+			LeftEyeClosed = RightEyeClosed = TobiiAPI.GetUserPresence().IsUserPresent() && (Time.unscaledTime - gazePoint.Timestamp) > 0.15f || !gazePoint.IsRecent();*/
 		}
-}
+	}
 }

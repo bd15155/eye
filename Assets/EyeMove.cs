@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Tobii.Gaming;
 using System.IO;
+using System;
 
 namespace TobiiEyeTracking
 {
@@ -11,7 +12,7 @@ namespace TobiiEyeTracking
     {
         void Update()
         {
-            GazePoint gazePoint = TobiiAPI.GetGazePoint();
+            Vector2 gazePoint = TobiiAPI.GetGazePoint().Screen;
             print(gazePoint);
         }
     }
