@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.4964128, b: 0.57481664, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748174, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -266,12 +266,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872767750}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 1.44, z: 1.79}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.03, y: 0.0218, z: 0.0376}
+  m_LocalScale: {x: 0.008, y: 0.008, z: 0.008}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 987600636}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &872767755
 MonoBehaviour:
@@ -280,18 +280,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872767750}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c768d2b79b4ee9f4e9b14cef59e9f7a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UpdateType: 1
   LookTarget: {fileID: 872767750}
-  Renge_X: 0.3
-  Renge_Y: 0.1
-  Invert_X: 1
+  Range_X: 0.3
+  Range_Y: 0.1
+  Invert_X: 0
   Invert_Y: 0
-  FilterSmoothingFactor: 0.7
+  FilterSmoothingFactor: 0.15
 --- !u!1 &987600631 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: c7604ed6326663943b07e22d9c2cdec1,
@@ -329,13 +329,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987600631}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f349bcae05887d54a927a34d41cac338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Head: {fileID: 987600636}
   Responsiveness: 10
+--- !u!114 &987600635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987600631}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb0287734ed1d84382f30695e8a5ea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LookTarget: {fileID: 1267084235}
+  Range_X: 0.3
+  Range_Y: 0.1
+  Invert_X: 0
+  Invert_Y: 0
 --- !u!4 &987600636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: c7604ed6326663943b07e22d9c2cdec1,
@@ -354,6 +371,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fca1690d99cacf74ea965586235addf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &987600638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987600631}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c768d2b79b4ee9f4e9b14cef59e9f7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpdateType: 1
+  LookTarget: {fileID: 872767750}
+  Range_X: 0.3
+  Range_Y: 0.1
+  Invert_X: 0
+  Invert_Y: 0
+  FilterSmoothingFactor: 0.15
 --- !u!1 &1267084235
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,12 +475,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267084235}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.57, y: 1.46, z: 1.79}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0314, y: 0.0222, z: 0.0376}
+  m_LocalScale: {x: 0.008, y: 0.008, z: 0.008}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 987600636}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1267084240
 MonoBehaviour:
@@ -453,18 +489,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267084235}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acb0287734ed1d84382f30695e8a5ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpdateType: 1
   LookTarget: {fileID: 1267084235}
-  Renge_X: 0.3
-  Renge_Y: 0.1
+  Range_X: 0.3
+  Range_Y: 0.1
   Invert_X: 0
-  Invert_Y: 1
-  FilterSmoothingFactor: 0.7
+  Invert_Y: 0
 --- !u!1 &1395507218
 GameObject:
   m_ObjectHideFlags: 0

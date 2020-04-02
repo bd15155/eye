@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//キャラクターがランダムに動くクラス
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,12 +14,12 @@ namespace TobiiEyeTracking
         void Update()
         {
           
-            if (axis.y > 0 && Angle >= 45)
+            if (axis.y > 0 && Angle >= 20)
             {
                 //print("true");
                 dir = -1;
             }
-            if (axis.y < 0 && Angle >= 45)
+            if (axis.y < 0 && Angle >= 20)
             {
                 //print("false");
                 dir = 1;

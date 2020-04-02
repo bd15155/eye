@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿//logをのこるクラス
+using System.IO;
 using UnityEngine;
 
 public class MyLogCallback : MonoBehaviour
