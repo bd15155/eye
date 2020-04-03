@@ -285,13 +285,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c768d2b79b4ee9f4e9b14cef59e9f7a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpdateType: 1
   LookTarget: {fileID: 872767750}
   Range_X: 0.3
   Range_Y: 0.1
   Invert_X: 0
   Invert_Y: 0
-  FilterSmoothingFactor: 0.15
 --- !u!1 &987600631 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: c7604ed6326663943b07e22d9c2cdec1,
@@ -329,7 +327,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987600631}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f349bcae05887d54a927a34d41cac338, type: 3}
   m_Name: 
@@ -343,7 +341,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987600631}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acb0287734ed1d84382f30695e8a5ea2, type: 3}
   m_Name: 
@@ -378,18 +376,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987600631}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c768d2b79b4ee9f4e9b14cef59e9f7a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UpdateType: 1
   LookTarget: {fileID: 872767750}
   Range_X: 0.3
   Range_Y: 0.1
   Invert_X: 0
   Invert_Y: 0
-  FilterSmoothingFactor: 0.15
 --- !u!1 &1267084235
 GameObject:
   m_ObjectHideFlags: 0

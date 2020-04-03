@@ -1,4 +1,4 @@
-﻿//logをのこるクラス
+﻿//logをtxtに出力クラス
 using System.IO;
 using UnityEngine;
 

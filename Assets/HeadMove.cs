@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿//頭のPOSEを取るクラス
+using UnityEngine;
 using Tobii.Gaming;
 
 namespace TobiiEyeTracking{

@@ -1,4 +1,4 @@
-﻿//eye動きデータを取るクラス
+﻿//eyeの動きlogを残すクラス
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
