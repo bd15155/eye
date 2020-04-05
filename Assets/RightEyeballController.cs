@@ -18,5 +18,7 @@ public class RightEyeballController : MonoBehaviour
         // 入力2: TobiiAPI.GetGazePoint
         // 方法: Camera.ScreenToWorldPoint
         //        ↑ おそらく
+
+        transform.localRotation = Quaternion.Euler(0, Time.time * 100, 0);
     }
 }
