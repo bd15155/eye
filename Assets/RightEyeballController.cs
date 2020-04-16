@@ -1,24 +1,28 @@
-﻿using System.Collections;
+﻿//右眼球動きのクラス
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Tobii.Gaming;
+
+namespace TobiiEyeTracking { 
 
 public class RightEyeballController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject LookTarget;
+        void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
-        // 出力: transform.localRotation
-        // 入力1: transform.position;
-        // 入力2: TobiiAPI.GetGazePoint
-        // 方法: Camera.ScreenToWorldPoint
-        //        ↑ おそらく
+            // 出力: transform.localRotation
+            // 入力1: transform.position;
+            // 入力2: TobiiAPI.GetGazePoint
+            GazePoint gazePoint = TobiiAPI.GetGazePoint();
+            // 方法: Camera.ScreenToWorldPoint
+            //        ↑ おそらく
 
-        transform.localRotation = Quaternion.Euler(0, Time.time * 100, 0);
+            transform.localRotation = Quaternion.Euler(0, Time.time * 100, 0);
     }
 }
+                             } 
