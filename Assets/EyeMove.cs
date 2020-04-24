@@ -15,7 +15,7 @@ namespace TobiiEyeTracking
         {
             //Gaze point in screen space (where (0,0) is lower left corner)
             Vector2 gazePoint = TobiiAPI.GetGazePoint().Screen;
-            print( gazePoint);
+            print(gazePoint);
             //Gaze point in viewport space
             Vector2 gazepoint = TobiiAPI.GetGazePoint().Viewport;
             //print(gazepoint);

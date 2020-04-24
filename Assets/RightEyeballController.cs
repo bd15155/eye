@@ -16,6 +16,7 @@ public class RightEyeballController : MonoBehaviour
     void Update()
     {
             // 出力: transform.localRotation
+
             // 入力1: transform.position;
             // 入力2: TobiiAPI.GetGazePoint
             GazePoint gazePoint = TobiiAPI.GetGazePoint();
