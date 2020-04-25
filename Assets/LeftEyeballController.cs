@@ -29,18 +29,19 @@ namespace TobiiEyeTracking
             GazePoint gazePoint = TobiiAPI.GetGazePoint();
             Vector3 gazePointInWorld = new Vector3(gazePoint.Screen.x, gazePoint.Screen.y, cam.nearClipPlane);
             
-            //EyeballCenterからCameraに向かうvector
-            Vector3 EyeCamPos = Campos - EyePos;
-            //EyeballCenterからGazePointに向かうvector
-            Vector3 EyeGazePos = gazePointInWorld - EyePos;
+            //EyeballCenterからCameraに向かうdirectional vector
+            Vector3 EyeCamPos = Vector3.Normalize(Campos - EyePos);
+            //EyeballCenterからGazePointに向かうdirectional vector
+            Vector3 EyeGazePos = Vector3.Normalize(gazePointInWorld - EyePos);
             
             //cross productの計算
-            Vector3 normal = Vector3.Cross(EyeCamPos, EyeGazePos);
-            Vector3 Normal = Vector3.Cross(EyeGazePos, EyeCamPos);
-            float angle = Mathf.Asin(Vector3.Distance(Vector3.zero, Vector3.Cross(EyeCamPos.normalized, EyeGazePos.normalized))) * Mathf.Rad2Deg;
-            print("EyeCamPos x EyeGazePosのcross product：" + normal);
-            print("EyeGazePos x EyeCamPosのcross product：" + Normal);
-            print("a，bの角度：" + angle);
+            Vector3 axis = Vector3.Cross(EyeCamPos, EyeGazePos); // 回転軸 どちらかだけ使う
+            axis = Vector3.Normalize(axis);
+           // Vector3 Normal = Vector3.Cross(EyeGazePos, EyeCamPos);
+            //float angle = Mathf.Asin(Vector3.Distance(Vector3.zero, Vector3.Cross(EyeCamPos.normalized, EyeGazePos.normalized))) * Mathf.Rad2Deg;
+            //print("EyeCamPos x EyeGazePosのcross product：" + normal);
+           // print("EyeGazePos x EyeCamPosのcross product：" + Normal);
+            //print("a，bの角度：" + angle);
             
             //inner productの計算
             float dotv = Vector3.Dot(EyeCamPos, EyeGazePos);
@@ -48,6 +49,7 @@ namespace TobiiEyeTracking
             print("EyeCamPos x EyeGazePosのinner product：" + dotv);
             print("a，bの角度：" + Angle);
 
+            //Quaternion.AngleAxis;
             //transform.localRotation = Quaternion.Euler(0, Time.time * 100, 0);
         }
     }
