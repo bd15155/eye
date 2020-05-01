@@ -1,4 +1,4 @@
-﻿//眼球動きのクラス
+﻿//眼球を視線により動かせるクラス
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +8,7 @@ using System;
 namespace TobiiEyeTracking
 {
 
-    public class LeftEyeballController : MonoBehaviour
+    public class EyeballController : MonoBehaviour
     {
         public GameObject LookTarget;
         private Vector3 Campos;
@@ -21,8 +21,6 @@ namespace TobiiEyeTracking
         }
         void Update()
         {
-            // 出力: transform.localRotation
-
             // 入力1: transform.position;
             Vector3 EyePos = LookTarget.transform.position;
             // 入力2: TobiiAPI.GetGazePoint
@@ -35,22 +33,14 @@ namespace TobiiEyeTracking
             Vector3 EyeGazePos = Vector3.Normalize(gazePointInWorld - EyePos);
             
             //cross productの計算
-            Vector3 axis = Vector3.Cross(EyeCamPos, EyeGazePos); // 回転軸 どちらかだけ使う
+            Vector3 axis = Vector3.Cross(EyeGazePos, EyeCamPos); 
             axis = Vector3.Normalize(axis);
-           // Vector3 Normal = Vector3.Cross(EyeGazePos, EyeCamPos);
-            //float angle = Mathf.Asin(Vector3.Distance(Vector3.zero, Vector3.Cross(EyeCamPos.normalized, EyeGazePos.normalized))) * Mathf.Rad2Deg;
-            //print("EyeCamPos x EyeGazePosのcross product：" + normal);
-           // print("EyeGazePos x EyeCamPosのcross product：" + Normal);
-            //print("a，bの角度：" + angle);
-            
             //inner productの計算
-            float dotv = Vector3.Dot(EyeCamPos, EyeGazePos);
-            float Angle = Mathf.Acos(Vector3.Dot(EyeCamPos.normalized, EyeGazePos.normalized));
-            print("EyeCamPos x EyeGazePosのinner product：" + dotv);
-            print("a，bの角度：" + Angle);
+            float Angle = Mathf.Acos(Vector3.Dot(EyeCamPos, EyeGazePos));
+            print("EyeCamPos，EyeGazePosの角度：" + Angle * Mathf.Rad2Deg);
 
-            //Quaternion.AngleAxis;
-            //transform.localRotation = Quaternion.Euler(0, Time.time * 100, 0);
+            // 出力: transform.localRotation
+            transform.rotation = Quaternion.AngleAxis(Angle, axis); 
         }
     }
 }

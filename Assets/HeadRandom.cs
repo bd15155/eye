@@ -1,4 +1,4 @@
-﻿//キャラクターがランダムに動くクラス
+﻿//キャラクターをランダムに動かせるクラス
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,18 +16,16 @@ namespace TobiiEyeTracking
           
             if (axis.y > 0 && Angle >= 20)
             {
-                //print("true");
                 dir = -1;
             }
             if (axis.y < 0 && Angle >= 20)
             {
-                //print("false");
                 dir = 1;
             }
             transform.rotation *= Quaternion.Euler(20 * Time.deltaTime * 0, dir, 0);
             transform.rotation.ToAngleAxis(out Angle, out axis);
-            print(Angle);
-            print(axis);
+            print("頭の回転角度" + Angle);
+            print("頭の回転傾向" + axis);
          
         }
     }
