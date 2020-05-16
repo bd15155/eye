@@ -26,20 +26,18 @@ namespace TobiiEyeTracking
             // 入力2: TobiiAPI.GetGazePoint
             GazePoint gazePoint = TobiiAPI.GetGazePoint();
             Vector3 gazePointInWorld = cam.ScreenToWorldPoint(new Vector3(gazePoint.Screen.x, gazePoint.Screen.y, cam.nearClipPlane));
-            //EyeballCenterからCameraに向かうdirectional vector
+            // EyeballCenterからCameraに向かうdirectional vector
             Vector3 EyeCamPos = Vector3.Normalize(Campos - EyePos);
             Vector3 EyeGazePos = Vector3.Normalize(gazePointInWorld - EyePos);
-            
-            //cross productの計算
-            //Vector3 axis = Vector3.Cross(EyeGazePos, EyeCamPos);
+            // cross productの計算
             Vector3 axis = Vector3.Cross(EyeCamPos, EyeGazePos);
             axis = Vector3.Normalize(axis);
             //inner productの計算
             float Angle = Mathf.Acos(Vector3.Dot(EyeCamPos, EyeGazePos));
-            print("EyeCamPos，EyeGazePosの角度：" + Angle * Mathf.Rad2Deg);
             float angle = Angle * Mathf.Rad2Deg;
+            print("EyeCamPos，EyeGazePosの角度：" + Angle * Mathf.Rad2Deg);
             // 出力: transform.localRotation
-            transform.rotation = Quaternion.AngleAxis(angle, axis);
+            transform.rotation = Quaternion.AngleAxis(angle*20, axis);
             print(gazePointInWorld);
         }
     }
