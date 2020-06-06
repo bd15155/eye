@@ -35,10 +35,9 @@ namespace TobiiEyeTracking
             //inner productの計算
             float Angle = Mathf.Acos(Vector3.Dot(EyeCamPos, EyeGazePos));
             float angle = Angle * Mathf.Rad2Deg;
-            print("EyeCamPos，EyeGazePosの角度：" + Angle * Mathf.Rad2Deg);
             // 出力: transform.localRotation
-            transform.rotation = Quaternion.AngleAxis(angle*20, axis);
-            print(gazePointInWorld);
+            transform.rotation = Quaternion.AngleAxis(angle*40, axis);
+            print(LookTarget.transform.position);
         }
     }
 }

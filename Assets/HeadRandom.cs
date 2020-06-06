@@ -24,8 +24,8 @@ namespace TobiiEyeTracking
             }
             transform.rotation *= Quaternion.Euler(20 * Time.deltaTime * 0, dir, 0);
             transform.rotation.ToAngleAxis(out Angle, out axis);
-            print("頭の回転角度" + Angle);
-            print("頭の回転傾向" + axis);
+            //print("頭の回転角度" + Angle);
+            //print("頭の回転傾向" + axis);
          
         }
     }
