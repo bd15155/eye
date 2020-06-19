@@ -37,7 +37,7 @@ namespace TobiiEyeTracking
             float angle = Angle * Mathf.Rad2Deg;
             // 出力: transform.localRotation
             transform.rotation = Quaternion.AngleAxis(angle*40, axis);
-            print(LookTarget.transform.position);
+            print(gazePoint);
         }
     }
 }
