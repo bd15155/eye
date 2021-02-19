@@ -11,10 +11,12 @@ namespace TobiiEyeTracking{
 	void Update()
 	{
 		var headPose = TobiiAPI.GetHeadPose();
-		if (headPose.IsRecent())
+		//if (headPose.IsRecent())
 		{
 			Head.transform.localRotation = Quaternion.Lerp(Head.transform.localRotation, headPose.Rotation, Time.unscaledDeltaTime * Responsiveness);
+			//print("HeadPose Position (X,Y,Z): " + headPose.Position.x + ", " + headPose.Position.y + ", " + headPose.Position.z);
+            print("HeadPose Rotation (X,Y,Z): " + headPose.Rotation.eulerAngles.x + ", " + headPose.Rotation.eulerAngles.y + ", " + headPose.Rotation.eulerAngles.z);
 		}
 	}
 }
-　　　　　　　　　　　　}
+　　　　　　　　　　　　       }
