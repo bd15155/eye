@@ -24,7 +24,7 @@ using System;
             Vector3 EyePos = LookTarget.transform.position;
             // 入力2: TobiiAPI.GetGazePoint
             GazePoint gazePoint = TobiiAPI.GetGazePoint();
-            Vector3 gazePointInWorld = cam.ScreenToWorldPoint(new Vector3(gazePoint.Screen.x, gazePoint.Screen.y, cam.nearClipPlane));
+            Vector3 gazePointInWorld = cam.ScreenToWorldPoint(new Vector3(StateManger.FsmEye.x, StateManger.FsmEye.y, cam.nearClipPlane));
             // EyeballCenterからCameraに向かうdirectional vector
             Vector3 EyeCamPos = Vector3.Normalize(Campos - EyePos);
             Vector3 EyeGazePos = Vector3.Normalize(gazePointInWorld - EyePos);
