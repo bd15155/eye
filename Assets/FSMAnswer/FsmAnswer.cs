@@ -18,7 +18,6 @@ public class FsmAnswer : MonoBehaviour {
 //设置默认状态
         stm.SetDefat("C");
     }
-
     // Update is called once per frame
     void Update()
     {

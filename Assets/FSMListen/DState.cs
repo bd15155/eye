@@ -7,7 +7,9 @@ namespace Listen
 public class DState : StateObject
 {
     public DState(StateManger _sm):base(_sm)
-    {       
+    {     
+        a = 1671;
+        b = 770;     
     }
     public static bool Probability(float fPercent)
     {

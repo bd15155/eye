@@ -7,7 +7,9 @@ namespace Listen
 public class CState : StateObject
 {
     public CState(StateManger _sm):base(_sm)
-    {       
+    {    
+        a = 757;
+        b = 747;      
     }
     public static bool Probability(float fPercent)
     {

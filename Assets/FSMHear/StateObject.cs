@@ -8,6 +8,8 @@ public abstract class StateObject
 {
     //状态控制机
     protected StateManger sm;
+    public float x;
+    public float y;
     //构造函数
     public StateObject(StateManger _sm)
     {

@@ -50,6 +50,16 @@ public class StateManger {
         {
             currentstate.UpdateState();
         }
+    }        
+    public Vector2 FsmEye
+    {
+    get
+    {  
+    Vector2 point;
+    point.x = currentstate.x;
+    point.y = currentstate.y;  
+    return point;    
     }
+    } 
 }
 }    

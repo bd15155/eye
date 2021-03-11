@@ -7,7 +7,9 @@ namespace Answer
 public class CState : StateObject
 {
     public CState(StateManger _sm):base(_sm)
-    {       
+    {
+        a = 1946;
+        b = 729;
     }
     public static bool Probability(float fPercent)
     {
@@ -47,7 +49,7 @@ public class CState : StateObject
         {
             sm.ChangeState("D");
         }
-        else if(Probability(25))
+        else if(Probability(0))
         {
             sm.ChangeState("E");
         }
@@ -55,7 +57,7 @@ public class CState : StateObject
         {
             sm.ChangeState("C");
         }
-        else if(Probability(0))
+        else if(Probability(25))
         {
             sm.ChangeState("A");
         }

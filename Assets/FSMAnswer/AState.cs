@@ -8,7 +8,9 @@ public class AState : StateObject
 {
     
     public AState(StateManger _sm):base(_sm)
-    {       
+    {
+        a = 545;
+        b = 1097;
     }
     public static bool Probability(float fPercent)
     {
@@ -39,23 +41,23 @@ public class AState : StateObject
     public override void UpdateState()
     {
         Debug.Log("A状態更新");
-        if (Probability(50))
+        if (Probability(20))
         {
             sm.ChangeState("B");
         }
-        else if(Probability(50))
+        else if(Probability(20))
         {
             sm.ChangeState("A");
         }
-        else if(Probability(0))
+        else if(Probability(20))
         {
             sm.ChangeState("C");
         }
-        else if(Probability(0))
+        else if(Probability(20))
         {
             sm.ChangeState("D");
         }
-        else if(Probability(0))
+        else if(Probability(20))
         {
             sm.ChangeState("E");
         }

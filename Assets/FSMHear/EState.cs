@@ -7,7 +7,9 @@ namespace Hear
 public class EState : StateObject
 {
     public EState(StateManger _sm):base(_sm)
-    {      
+    {          
+        x = 1212;
+        y = 218;     
     }
     public static bool Probability(float fPercent)
     {

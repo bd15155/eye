@@ -8,6 +8,8 @@ public class DState : StateObject
 {
     public DState(StateManger _sm):base(_sm)
     {       
+        a = 1421;
+        b = 659;
     }
     public static bool Probability(float fPercent)
     {
@@ -39,11 +41,11 @@ public class DState : StateObject
     public override void UpdateState()
     {
         Debug.Log("D状態更新");
-        if (Probability(100))
+        if (Probability(30))
         {
             sm.ChangeState("C");
         }
-        else if(Probability(0))
+        else if(Probability(40))
         {
             sm.ChangeState("A");
         }
@@ -55,7 +57,7 @@ public class DState : StateObject
         {
             sm.ChangeState("D");
         }
-        else if(Probability(0))
+        else if(Probability(30))
         {
             sm.ChangeState("E");
         }

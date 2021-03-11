@@ -7,7 +7,9 @@ namespace Answer
 public class BState : StateObject
 {
     public BState(StateManger _sm):base(_sm)
-    {       
+    {
+        a = 1885;
+        b = 1186;      
     }
     public static bool Probability(float fPercent)
     {

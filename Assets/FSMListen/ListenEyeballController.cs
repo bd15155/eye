@@ -5,8 +5,9 @@ using UnityEngine;
 using Tobii.Gaming;
 using System;
 
-
-    public class EyeballController: MonoBehaviour 
+namespace Listen
+{
+    public class ListenEyeballController: MonoBehaviour 
     {
         public GameObject LookTarget;
         private Vector3 Campos;
@@ -24,7 +25,8 @@ using System;
             Vector3 EyePos = LookTarget.transform.position;
             // 入力2: TobiiAPI.GetGazePoint
             GazePoint gazePoint = TobiiAPI.GetGazePoint();
-            Vector3 gazePointInWorld = cam.ScreenToWorldPoint(new Vector3(StateManger.FsmEye.x, StateManger.FsmEye.y, cam.nearClipPlane));
+            StateManger stm = new StateManger();
+            Vector3 gazePointInWorld = cam.ScreenToWorldPoint(new Vector3(stm.FsmEye.x, stm.FsmEye.y, cam.nearClipPlane));
             // EyeballCenterからCameraに向かうdirectional vector
             Vector3 EyeCamPos = Vector3.Normalize(Campos - EyePos);
             Vector3 EyeGazePos = Vector3.Normalize(gazePointInWorld - EyePos);
@@ -40,3 +42,4 @@ using System;
             print(gazePoint);
         }
     }
+}

@@ -7,7 +7,9 @@ namespace Answer
 public class EState : StateObject
 {
     public EState(StateManger _sm):base(_sm)
-    {      
+    {   
+        a = 441;
+        b = 755;
     }
     public static bool Probability(float fPercent)
     {
@@ -39,7 +41,7 @@ public class EState : StateObject
     public override void UpdateState()
     {
         Debug.Log("E状態更新");
-        if (Probability(50))
+        if (Probability(30))
         {
             sm.ChangeState("A");
         }
@@ -51,11 +53,11 @@ public class EState : StateObject
         {
             sm.ChangeState("B");
         }
-        else if(Probability(0))
+        else if(Probability(30))
         {
             sm.ChangeState("D");
         }
-        else if(Probability(0))
+        else if(Probability(40))
         {
             sm.ChangeState("E");
         }

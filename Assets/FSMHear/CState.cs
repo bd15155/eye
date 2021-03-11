@@ -7,7 +7,9 @@ namespace Hear
 public class CState : StateObject
 {
     public CState(StateManger _sm):base(_sm)
-    {       
+    {   
+        x = 1701;
+        y = 660;     
     }
     public static bool Probability(float fPercent)
     {
