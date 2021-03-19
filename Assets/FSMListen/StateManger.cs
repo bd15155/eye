@@ -54,8 +54,7 @@ public class StateManger {
     public Vector2 FsmEye
     {
     get
-    {  
-    //point = new Vector2();
+    {
     Vector2 point;
     point.x = currentstate.a;
     point.y = currentstate.b;  
