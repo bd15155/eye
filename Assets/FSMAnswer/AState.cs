@@ -9,8 +9,8 @@ public class AState : StateObject
     
     public AState(StateManger _sm):base(_sm)
     {
-        a = 545;
-        b = 1097;
+        a = 347;
+        b = 524;
     }
     public static bool Probability(float fPercent)
     {

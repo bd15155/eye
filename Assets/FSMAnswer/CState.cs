@@ -8,8 +8,8 @@ public class CState : StateObject
 {
     public CState(StateManger _sm):base(_sm)
     {
-        a = 1946;
-        b = 729;
+        a = 1355;
+        b = 345;
     }
     public static bool Probability(float fPercent)
     {

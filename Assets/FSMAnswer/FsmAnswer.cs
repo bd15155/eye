@@ -4,11 +4,13 @@ using UnityEngine;
 
 namespace Answer
 {
-public class FsmListen : MonoBehaviour
+public class FsmAnswer : MonoBehaviour
 {
     public GameObject LookTarget;
     private Vector3 Campos;
     private Camera cam;
+    public bool flag = false;
+
     //添加一个状态机
     StateManger stm = new StateManger();
     void Start()
@@ -28,6 +30,9 @@ public class FsmListen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(flag)
+        {
+          Debug.Log("Answer");
         //更新状态的方法
         stm.UpdateState();
         // 入力1: transform.position;
@@ -45,6 +50,12 @@ public class FsmListen : MonoBehaviour
         float angle = Angle * Mathf.Rad2Deg;
         // 出力: transform.localRotation
         transform.rotation = Quaternion.AngleAxis(angle*40, axis);
+        }
     }
+    void Awake()
+    {
+		// FPS設定
+		Application.targetFrameRate = 1;
+	}
 }
 }

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Hear
+namespace Think
 {
-public class FsmListen : MonoBehaviour
+public class FsmThink : MonoBehaviour
 {
     public GameObject LookTarget;
     private Vector3 Campos;
+    public bool flag = false;
+
     private Camera cam;
 //添加一个状态机
     StateManger stm = new StateManger();
@@ -28,6 +30,10 @@ public class FsmListen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(flag)
+        {
+            Debug.Log("Think");
+
 //更新状态的方法
         stm.UpdateState();
         // 入力1: transform.position;
@@ -45,6 +51,12 @@ public class FsmListen : MonoBehaviour
         float angle = Angle * Mathf.Rad2Deg;
         // 出力: transform.localRotation
         transform.rotation = Quaternion.AngleAxis(angle*40, axis);
+        }
     }
+    void Awake()
+    {
+		// FPS設定
+		Application.targetFrameRate = 1;
+	}
 }
 }

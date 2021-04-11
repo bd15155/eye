@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Hear
+namespace Think
 {
 public abstract class StateObject
 {

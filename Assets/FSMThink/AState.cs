@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Hear
+namespace Think
 {
-public class BState : StateObject
+public class AState : StateObject
 {
-    public BState(StateManger _sm):base(_sm)
+    
+    public AState(StateManger _sm):base(_sm)
     {    
-        x = 920;
-        y = 937;    
+        x = 247;
+        y = 412;   
     }
     public static bool Probability(float fPercent)
     {
@@ -30,37 +31,36 @@ public class BState : StateObject
     }
     public override void EnterState()
     {
-        Debug.Log("B状態に入る");
+        Debug.Log("A状態に入る");
     }
 
     public override void ExitState()
     {
-        Debug.Log("B状態から出る");
+        Debug.Log("A状態から出る");
     }
-
     public override void UpdateState()
     {
-        Debug.Log("B状態更新");
-        if (Probability(30))
+        Debug.Log("A状態更新");
+        if (Probability(50))
+        {
+            sm.ChangeState("B");
+        }
+        else if(Probability(50))
+        {
+            sm.ChangeState("E");
+        }
+        else if(Probability(0))
         {
             sm.ChangeState("A");
         }
-        else if (Probability(30))
+        else if(Probability(0))
         {
             sm.ChangeState("C");
-        } 
-        else if (Probability(40))
-        {
-            sm.ChangeState("B");
         }
         else if(Probability(0))
         {
             sm.ChangeState("D");
         }
-        else if(Probability(0))
-        {
-            sm.ChangeState("E");
-        }         
     }
 }
 }

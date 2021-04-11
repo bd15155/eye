@@ -8,8 +8,8 @@ public class BState : StateObject
 {
     public BState(StateManger _sm):base(_sm)
     {
-        a = 1885;
-        b = 1186;      
+        a = 1254;
+        b = 606;      
     }
     public static bool Probability(float fPercent)
     {

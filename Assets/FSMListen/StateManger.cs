@@ -10,7 +10,7 @@ public class StateManger {
     Dictionary<string, StateObject> Dic = new Dictionary<string, StateObject>();
 
     //当前状态
-    StateObject currentstate;
+    static StateObject currentstate;
     //注册状态
     public void Region(string statename,StateObject state)
     {
@@ -44,14 +44,14 @@ public class StateManger {
     }
 
     //更新状态
-    public void UpdateState()
+    public static void UpdateState()
     {
         if (currentstate!=null)
         {
             currentstate.UpdateState();
         }
     }
-    public Vector2 FsmEye
+    public static Vector2 FsmEye
     {
     get
     {

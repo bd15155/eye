@@ -8,8 +8,8 @@ public class DState : StateObject
 {
     public DState(StateManger _sm):base(_sm)
     {       
-        a = 1421;
-        b = 659;
+        a = 981;
+        b = 319;
     }
     public static bool Probability(float fPercent)
     {
