@@ -10,10 +10,6 @@ public class SceneUIManager: MonoBehaviour
 {
     public GameObject ListenLeft;
     public GameObject ListenRight;
-    public GameObject answerLeft;
-    public GameObject answerRight;
-    public GameObject thinkLeft;
-    public GameObject thinkRight;
 
 
     public void OnClickListen()
@@ -25,7 +21,7 @@ public class SceneUIManager: MonoBehaviour
         ListenLeft.GetComponent<FsmAnswer>().flag = false;
         ListenRight.GetComponent<FsmAnswer>().flag = false;
     }
-     public void OnClickthink()
+    public void OnClickthink()
     {        
         ListenLeft.GetComponent<FsmListen>().flag = false;
         ListenRight.GetComponent<FsmListen>().flag = false;
@@ -34,8 +30,8 @@ public class SceneUIManager: MonoBehaviour
         ListenLeft.GetComponent<FsmAnswer>().flag = false;
         ListenRight.GetComponent<FsmAnswer>().flag = false;
     }    
-     public void OnClickanswer()
-     {   
+    public void OnClickanswer()
+    {   
         ListenLeft.GetComponent<FsmListen>().flag = false;
         ListenRight.GetComponent<FsmListen>().flag = false;
         ListenLeft.GetComponent<FsmThink>().flag = false;
