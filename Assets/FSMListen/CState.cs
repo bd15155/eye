@@ -6,7 +6,7 @@ namespace Listen
 {
 public class CState : StateObject
 {
-    public CState(StateManger _sm):base(_sm)
+    public CState()
     {    
         a = 757;
         b = 747;      
@@ -43,23 +43,23 @@ public class CState : StateObject
         Debug.Log("C状態更新");
         if (Probability(25))
         {
-            sm.ChangeState("B");
+            StateManger.GetInstance().ChangeState("B");
         }
         else if(Probability(25))
         {
-            sm.ChangeState("D");
+            StateManger.GetInstance().ChangeState("D");
         }
         else if(Probability(25))
         {
-            sm.ChangeState("E");
+            StateManger.GetInstance().ChangeState("E");
         }
         else if(Probability(25))
         {
-            sm.ChangeState("C");
+            StateManger.GetInstance().ChangeState("C");
         }
         else if(Probability(0))
         {
-            sm.ChangeState("A");
+            StateManger.GetInstance().ChangeState("A");
         }
     }
 }

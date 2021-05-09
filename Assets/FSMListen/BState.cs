@@ -6,7 +6,8 @@ namespace Listen
 {
 public class BState : StateObject
 {
-    public BState(StateManger _sm):base(_sm)
+    //public BState(StateManger _sm):base(_sm)
+    public BState()
     {    
         a = 618;
         b = 697;      
@@ -43,23 +44,23 @@ public class BState : StateObject
         Debug.Log("B状態更新");
         if (Probability(30))
         {
-            sm.ChangeState("A");
+            StateManger.GetInstance().ChangeState("A");
         }
         else if (Probability(30))
         {
-            sm.ChangeState("C");
+            StateManger.GetInstance().ChangeState("C");
         } 
         else if (Probability(40))
         {
-            sm.ChangeState("B");
+            StateManger.GetInstance().ChangeState("B");
         }
         else if(Probability(0))
         {
-            sm.ChangeState("D");
+            StateManger.GetInstance().ChangeState("D");
         }
         else if(Probability(0))
         {
-            sm.ChangeState("E");
+            StateManger.GetInstance().ChangeState("E");
         }       
     }
 }

@@ -11,32 +11,25 @@ public class FsmListen : MonoBehaviour
     private Vector3 Campos;
     private Camera cam;
 　　// 新しい状態機追加
-    StateManger stm = new StateManger();
-    void Start()
+    void Awake()
     {
+        Application.targetFrameRate = 1;
         Campos = GameObject.Find("Main Camera").transform.position;
         cam = Camera.main;
-        // 状態登録
-        stm.Region("A", new AState(stm));
-        stm.Region("B", new BState(stm));
-        stm.Region("C", new CState(stm));
-        stm.Region("D", new DState(stm));
-        stm.Region("E", new EState(stm));
-　　　　 // デフォルト状態設定
-        stm.SetDefat("C");
     }
 
     void Update()
     {
         if(flag)
         {
+            //Debug.Log(StateManger.GetInstance().FsmEye.y);
             Debug.Log("Listen");
 　　　　 //状態更新
-        StateManger.UpdateState();
+        //StateManger.GetInstance().UpdateState();
         // 入力1: transform.position;
         Vector3 EyePos = LookTarget.transform.position;
         // 入力2: TobiiAPI.GetGazePoint
-        Vector3 gazePointInWorld = cam.ScreenToWorldPoint(new Vector3(StateManger.FsmEye.x, StateManger.FsmEye.y, cam.nearClipPlane));
+        Vector3 gazePointInWorld = cam.ScreenToWorldPoint(new Vector3(StateManger.GetInstance().FsmEye.x, StateManger.GetInstance().FsmEye.y, cam.nearClipPlane));
         // EyeballCenterからCameraに向かうdirectional vector
         Vector3 EyeCamPos = Vector3.Normalize(Campos - EyePos);
         Vector3 EyeGazePos = Vector3.Normalize(gazePointInWorld - EyePos);
@@ -50,10 +43,5 @@ public class FsmListen : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle*40, axis);
         }
     }
-    void Awake()
-    {
-		// FPS設定
-		Application.targetFrameRate = 1;
-	}
 }
 }
