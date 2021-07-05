@@ -10,11 +10,11 @@ public class BState : StateObject
     public BState()
     {    
         a = 618;
-        b = 697;      
+        b = 397;      
     }
-    public static bool Probability(float fPercent)
+    public static bool Probability(double fPercent)
     {
-        float fProbabilityRate = UnityEngine.Random.value * 100.0f;
+        double fProbabilityRate = UnityEngine.Random.value * 100.0f;
 
         if(fPercent == 100.0f && fProbabilityRate == fPercent)
         {
@@ -42,23 +42,23 @@ public class BState : StateObject
     public override void UpdateState()
     {
         Debug.Log("B状態更新");
-        if (Probability(30))
+        if (Probability(0.0582))
         {
             StateManger.GetInstance().ChangeState("A");
         }
-        else if (Probability(30))
+        else if (Probability(0.0583))
         {
             StateManger.GetInstance().ChangeState("C");
         } 
-        else if (Probability(40))
+        else if (Probability(99.8703))
         {
             StateManger.GetInstance().ChangeState("B");
         }
-        else if(Probability(0))
+        else if(Probability(0.0015))
         {
             StateManger.GetInstance().ChangeState("D");
         }
-        else if(Probability(0))
+        else if(Probability(0.0117))
         {
             StateManger.GetInstance().ChangeState("E");
         }       

@@ -7,14 +7,8 @@ namespace Think
 public abstract class StateObject
 {
     //状态控制机
-    protected StateManger sm;
-    public float x;
-    public float y;
-    //构造函数
-    public StateObject(StateManger _sm)
-    {
-        sm = _sm;
-    }
+    public float a;
+    public float b;
     //进入状态方法
     public abstract void EnterState();
     //离开状态方法

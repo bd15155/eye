@@ -7,12 +7,12 @@ namespace Think
 public class AState : StateObject
 {
     
-    public AState(StateManger _sm):base(_sm)
+    public AState()
     {    
-        x = 247;
-        y = 412;   
+        a = 247;
+        b = 412;   
     }
-    public static bool Probability(float fPercent)
+    public static bool Probability(double fPercent)
     {
         float fProbabilityRate = UnityEngine.Random.value * 100.0f;
 
@@ -41,25 +41,25 @@ public class AState : StateObject
     public override void UpdateState()
     {
         Debug.Log("A状態更新");
-        if (Probability(50))
+        if (Probability(0.1313))
         {
-            sm.ChangeState("B");
+            StateManger.GetInstance().ChangeState("B");
         }
-        else if(Probability(50))
+        else if(Probability(0.0175))
         {
-            sm.ChangeState("E");
+            StateManger.GetInstance().ChangeState("E");
         }
-        else if(Probability(0))
+        else if(Probability(99.8512))
         {
-            sm.ChangeState("A");
-        }
-        else if(Probability(0))
-        {
-            sm.ChangeState("C");
+            StateManger.GetInstance().ChangeState("A");
         }
         else if(Probability(0))
         {
-            sm.ChangeState("D");
+            StateManger.GetInstance().ChangeState("C");
+        }
+        else if(Probability(0))
+        {
+            StateManger.GetInstance().ChangeState("D");
         }
     }
 }

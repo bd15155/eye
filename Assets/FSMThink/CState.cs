@@ -6,12 +6,12 @@ namespace Think
 {
 public class CState : StateObject
 {
-    public CState(StateManger _sm):base(_sm)
+    public CState()
     {   
-        x = 861;
-        y = 364;     
+        a = 861;
+        b = 364;     
     }
-    public static bool Probability(float fPercent)
+    public static bool Probability(double fPercent)
     {
         float fProbabilityRate = UnityEngine.Random.value * 100.0f;
 
@@ -41,25 +41,25 @@ public class CState : StateObject
     public override void UpdateState()
     {
         Debug.Log("C状態更新");
-        if (Probability(25))
+        if (Probability(0.0051))
         {
-            sm.ChangeState("B");
+            StateManger.GetInstance().ChangeState("B");
         }
-        else if(Probability(25))
+        else if(Probability(0.2235))
         {
-            sm.ChangeState("D");
+            StateManger.GetInstance().ChangeState("D");
         }
-        else if(Probability(25))
+        else if(Probability(0.0305))
         {
-            sm.ChangeState("E");
+            StateManger.GetInstance().ChangeState("E");
         }
-        else if(Probability(25))
+        else if(Probability(99.7409))
         {
-            sm.ChangeState("C");
+            StateManger.GetInstance().ChangeState("C");
         }
         else if(Probability(0))
         {
-            sm.ChangeState("A");
+            StateManger.GetInstance().ChangeState("A");
         }
     }
 }

@@ -4,8 +4,32 @@ using UnityEngine;
 
 namespace Think
 {
-public class StateManger {
-
+public class StateManger: MonoBehaviour {
+    private static StateManger instance;
+    public static StateManger GetInstance()
+    {
+        return instance;
+    }
+    void Awake()
+    {
+        instance = this;
+        // 状態登録
+        Region("A", new AState());
+        Region("B", new BState());
+        Region("C", new CState());
+        Region("D", new DState());
+        Region("E", new EState());
+　　　　 // デフォルト状態設定
+        SetDefat("B");
+    }
+    void Update()
+    {
+        UpdateState();
+    }
+    public static void Clear()
+    {
+        instance = default(StateManger);
+    }   
     //利用字典存储各种状态
     Dictionary<string, StateObject> Dic = new Dictionary<string, StateObject>();
 
@@ -56,8 +80,8 @@ public class StateManger {
     get
     {  
     Vector2 point;
-    point.x = currentstate.x;
-    point.y = currentstate.y;  
+    point.x = currentstate.a;
+    point.y = currentstate.b;  
     return point;    
     }
     } 

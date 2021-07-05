@@ -7,14 +7,14 @@ namespace Answer
 public class AState : StateObject
 {
     
-    public AState(StateManger _sm):base(_sm)
+    public AState()
     {
         a = 347;
         b = 524;
     }
-    public static bool Probability(float fPercent)
+    public static bool Probability(double fPercent)
     {
-        float fProbabilityRate = UnityEngine.Random.value * 100.0f;
+        double fProbabilityRate = UnityEngine.Random.value * 100.0f;
 
         if(fPercent == 100.0f && fProbabilityRate == fPercent)
         {
@@ -41,25 +41,25 @@ public class AState : StateObject
     public override void UpdateState()
     {
         Debug.Log("A状態更新");
-        if (Probability(20))
+        if (Probability(0.0418))
         {
-            sm.ChangeState("B");
+            StateManger.GetInstance().ChangeState("B");
         }
-        else if(Probability(20))
+        else if(Probability(99.7833))
         {
-            sm.ChangeState("A");
+            StateManger.GetInstance().ChangeState("A");
         }
-        else if(Probability(20))
+        else if(Probability(0.0038))
         {
-            sm.ChangeState("C");
+            StateManger.GetInstance().ChangeState("C");
         }
-        else if(Probability(20))
+        else if(Probability(0.0646))
         {
-            sm.ChangeState("D");
+            StateManger.GetInstance().ChangeState("D");
         }
-        else if(Probability(20))
+        else if(Probability(0.1065))
         {
-            sm.ChangeState("E");
+            StateManger.GetInstance().ChangeState("E");
         }
     }
 }

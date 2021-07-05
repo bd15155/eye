@@ -4,8 +4,32 @@ using UnityEngine;
 
 namespace Answer
 {
-public class StateManger {
-
+public class StateManger: MonoBehaviour {
+    private static StateManger instance;
+    public static StateManger GetInstance()
+    {
+        return instance;
+    }
+    void Awake()
+    {
+        instance = this;
+        // 状態登録
+        Region("A", new AState());
+        Region("B", new BState());
+        Region("C", new CState());
+        Region("D", new DState());
+        Region("E", new EState());
+　　　　 // デフォルト状態設定
+        SetDefat("C");
+    }
+    void Update()
+    {
+        UpdateState();
+    }   
+    public static void Clear()
+    {
+        instance = default(StateManger);
+    }
     //利用字典存储各种状态
     Dictionary<string, StateObject> Dic = new Dictionary<string, StateObject>();
 

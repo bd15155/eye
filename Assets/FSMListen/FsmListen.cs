@@ -7,13 +7,13 @@ namespace Listen
 public class FsmListen : MonoBehaviour
 {
     public GameObject LookTarget;
-    public bool flag = false;
     private Vector3 Campos;
+    public bool flag = false;
     private Camera cam;
 　　// 新しい状態機追加
     void Awake()
     {
-        Application.targetFrameRate = 1;
+        Application.targetFrameRate = -1;
         Campos = GameObject.Find("Main Camera").transform.position;
         cam = Camera.main;
     }
@@ -22,8 +22,7 @@ public class FsmListen : MonoBehaviour
     {
         if(flag)
         {
-            //Debug.Log(StateManger.GetInstance().FsmEye.y);
-            Debug.Log("Listen");
+        Debug.Log("Listen");
 　　　　 //状態更新
         //StateManger.GetInstance().UpdateState();
         // 入力1: transform.position;
@@ -40,7 +39,7 @@ public class FsmListen : MonoBehaviour
         float Angle = Mathf.Acos(Vector3.Dot(EyeCamPos, EyeGazePos));
         float angle = Angle * Mathf.Rad2Deg;
         // 出力: transform.localRotation
-        transform.rotation = Quaternion.AngleAxis(angle*40, axis);
+        transform.rotation = Quaternion.AngleAxis(angle*50, axis);
         }
     }
 }

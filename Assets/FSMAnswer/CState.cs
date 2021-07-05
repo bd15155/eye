@@ -6,14 +6,14 @@ namespace Answer
 {
 public class CState : StateObject
 {
-    public CState(StateManger _sm):base(_sm)
+    public CState()
     {
         a = 1355;
         b = 345;
     }
-    public static bool Probability(float fPercent)
+    public static bool Probability(double fPercent)
     {
-        float fProbabilityRate = UnityEngine.Random.value * 100.0f;
+        double fProbabilityRate = UnityEngine.Random.value * 100.0f;
 
         if(fPercent == 100.0f && fProbabilityRate == fPercent)
         {
@@ -41,25 +41,25 @@ public class CState : StateObject
     public override void UpdateState()
     {
         Debug.Log("C状態更新");
-        if (Probability(25))
+        if (Probability(0.0642))
         {
-            sm.ChangeState("B");
+            StateManger.GetInstance().ChangeState("B");
         }
-        else if(Probability(25))
+        else if(Probability(0.1026))
         {
-            sm.ChangeState("D");
+            StateManger.GetInstance().ChangeState("D");
         }
-        else if(Probability(0))
+        else if(Probability(0.0045))
         {
-            sm.ChangeState("E");
+            StateManger.GetInstance().ChangeState("E");
         }
-        else if(Probability(25))
+        else if(Probability(99.8261))
         {
-            sm.ChangeState("C");
+            StateManger.GetInstance().ChangeState("C");
         }
-        else if(Probability(25))
+        else if(Probability(0.0046))
         {
-            sm.ChangeState("A");
+            StateManger.GetInstance().ChangeState("A");
         }
     }
 }
