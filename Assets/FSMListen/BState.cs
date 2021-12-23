@@ -9,8 +9,8 @@ public class BState : StateObject
     //public BState(StateManger _sm):base(_sm)
     public BState()
     {    
-        a = 618;
-        b = 397;      
+        a = 395;
+        b = 1022;      
     }
     public static bool Probability(double fPercent)
     {
@@ -31,34 +31,31 @@ public class BState : StateObject
     }
     public override void EnterState()
     {
-        Debug.Log("B状態に入る");
     }
 
     public override void ExitState()
     {
-        Debug.Log("B状態から出る");
     }
 
     public override void UpdateState()
     {
-        Debug.Log("B状態更新");
-        if (Probability(0.0582))
+        if (Probability(0))
         {
             StateManger.GetInstance().ChangeState("A");
         }
-        else if (Probability(0.0583))
+        else if (Probability(4.592))
         {
             StateManger.GetInstance().ChangeState("C");
         } 
-        else if (Probability(99.8703))
+        else if (Probability(90.408))
         {
             StateManger.GetInstance().ChangeState("B");
         }
-        else if(Probability(0.0015))
+        else if(Probability(0))
         {
             StateManger.GetInstance().ChangeState("D");
         }
-        else if(Probability(0.0117))
+        else if(Probability(0))
         {
             StateManger.GetInstance().ChangeState("E");
         }       

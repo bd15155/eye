@@ -18,9 +18,9 @@ public class StateManger: MonoBehaviour {
         Region("B", new BState());
         Region("C", new CState());
         Region("D", new DState());
-        Region("E", new EState());
+        //Region("E", new EState());
 　　　　 // デフォルト状態設定
-        SetDefat("C");
+        SetDefat("B");
     }
     void Update()
     {

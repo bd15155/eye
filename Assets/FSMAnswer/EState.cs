@@ -30,17 +30,14 @@ public class EState : StateObject
     }
     public override void EnterState()
     {
-        Debug.Log("E状態に入る");
     }
 
     public override void ExitState()
     {
-        Debug.Log("E状態から出る");
     }
 
     public override void UpdateState()
     {
-        Debug.Log("E状態更新");
         if (Probability(0.1704))
         {
             StateManger.GetInstance().ChangeState("A");

@@ -35,7 +35,7 @@ public class FsmAnswer : MonoBehaviour
         float Angle = Mathf.Acos(Vector3.Dot(EyeCamPos, EyeGazePos));
         float angle = Angle * Mathf.Rad2Deg;
         // 出力: transform.localRotation
-        transform.rotation = Quaternion.AngleAxis(angle*50, axis);
+        transform.rotation = Quaternion.AngleAxis(angle*30, axis);
         }
     }
 }

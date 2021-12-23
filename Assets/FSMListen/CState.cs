@@ -8,8 +8,8 @@ public class CState : StateObject
 {
     public CState()
     {    
-        a = 757;
-        b = 447;      
+        a = 1220;
+        b = 376;      
     }
     public static bool Probability(double fPercent)
     {
@@ -30,34 +30,31 @@ public class CState : StateObject
     }
     public override void EnterState()
     {
-        Debug.Log("C状態に入る");
     }
 
     public override void ExitState()
     {
-        Debug.Log("C状態から出る");
     }
 
     public override void UpdateState()
     {
-        Debug.Log("C状態更新");
-        if (Probability(0.1146))
+        if (Probability(0.144))
         {
             StateManger.GetInstance().ChangeState("B");
         }
-        else if(Probability(0))
+        else if(Probability(0.575))
         {
             StateManger.GetInstance().ChangeState("D");
         }
-        else if(Probability(0.0422))
+        else if(Probability(0))
         {
             StateManger.GetInstance().ChangeState("E");
         }
-        else if(Probability(99.8342))
+        else if(Probability(98.858))
         {
             StateManger.GetInstance().ChangeState("C");
         }
-        else if(Probability(0.0090))
+        else if(Probability(0.323))
         {
             StateManger.GetInstance().ChangeState("A");
         }
