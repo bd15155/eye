@@ -32,7 +32,7 @@ public class MyLogCallback : MonoBehaviour
         FileInfo file = new FileInfo(path);
         m_writer = file.CreateText();
 
-        Application.logMessageReceived += LogCallback;
+        //Application.logMessageReceived += LogCallback;
 
         DontDestroyOnLoad(gameObject);
     }
